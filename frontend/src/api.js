@@ -1,7 +1,7 @@
 // api.js — FinBot API client
 // All backend communication goes through here
 
-const BASE = '/api'  // proxied by Vite to http://localhost:8000
+const BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 /**
  * Send a chat message to the FinBot agent.
