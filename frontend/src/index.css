@@ -1,0 +1,104 @@
+/* index.css — FinBot design system */
+/* Aesthetic: Clean fintech — Stratum-inspired light theme, palo de rosa accent */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Backgrounds — sage-white hierarchy */
+  --bg-void:       #ecefe8;
+  --bg-surface:    #f4f6f0;
+  --bg-card:       #ffffff;
+  --bg-input:      #eef0ea;
+  --bg-hover:      #e5e8df;
+
+  /* Borders */
+  --border:        #d6dace;
+  --border-bright: #c0c8b6;
+
+  /* Text */
+  --text-primary:  #1c2018;
+  --text-secondary:#4e5848;
+  --text-muted:    #8c9882;
+
+  /* Accents */
+  --accent-teal:   #59a84a;   /* natural green — primary */
+  --accent-blue:   #6b9fd4;   /* soft sky — secondary */
+  --accent-gold:   #b89438;   /* warm gold */
+  --accent-red:    #d45860;   /* loss / error */
+  --accent-rose:   #c9938a;   /* palo de rosa */
+  --accent-rose-bg:#f8f0ee;   /* rose surface */
+
+  /* Tool badge — green */
+  --tool-bg:       rgba(89, 168, 74, 0.10);
+  --tool-border:   rgba(89, 168, 74, 0.28);
+  --tool-text:     #448038;
+
+  /* Cache badge — rose */
+  --cache-bg:      rgba(201, 147, 138, 0.12);
+  --cache-border:  rgba(201, 147, 138, 0.30);
+  --cache-text:    #a86860;
+
+  /* Geometry */
+  --radius-sm:     8px;
+  --radius-md:     14px;
+  --radius-lg:     20px;
+  --radius-xl:     28px;
+
+  /* Typography */
+  --font-display:  'DM Serif Display', Georgia, serif;
+  --font-mono:     'DM Mono', 'Fira Code', monospace;
+  --font-body:     'Inter', system-ui, sans-serif;
+
+  /* Elevation */
+  --shadow-card:   0 1px 2px rgba(0,0,0,0.04), 0 4px 18px rgba(0,0,0,0.07);
+  --shadow-float:  0 8px 32px rgba(0,0,0,0.10);
+  --shadow-glow:   0 0 32px rgba(89,168,74,0.12);
+
+  --transition:    all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg-void);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: var(--border-bright); border-radius: 2px; }
+
+/* ─── Animations ──────────────────────────────────────────────────────────── */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.25; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes opacity-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
